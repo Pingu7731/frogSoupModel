@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package frogsoup.game;
+
+import "../../proto/game/google/protobuf/any.proto";
+
+message WeaponDataProto {
+  repeated string prompts = 1;
+  uint64 damagePerPrompt = 2;
+}

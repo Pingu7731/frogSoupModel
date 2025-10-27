@@ -1,0 +1,18 @@
+targets:
+  $default:
+    builders:
+      frogsoup_model|export_index_builder:
+        enabled: true
+        generate_for:
+          - lib/**
+        options:
+          # Optional: Add any builder-specific options here
+
+builders:
+  export_index_builder:
+    target: frogsoup_model
+    import: "package:frogsoup_model/build_tools/builder.dart"
+    builder_factories: ["exportIndexBuilder"]
+    build_extensions: {"$lib$": ["frogsoup_model_exports.dart"]}
+    auto_apply: dependents
+    build_to: source

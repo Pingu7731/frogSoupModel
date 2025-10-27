@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package frogsoup.game;
+
+// Defines a room, which contains mutliple cell. Multiple rooms can be placed
+// within a [FrogsouMapProto]
+message RoomProto {
+  uint64 id = 1;
+  uint64 x = 2;
+  uint64 y = 3;
+  uint64 width = 4;
+  uint64 height = 5;
+}

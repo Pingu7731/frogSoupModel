@@ -1,0 +1,88 @@
+// This is a generated file - do not edit.
+//
+// Generated from game/frogsoup_level.proto.
+
+// @dart = 3.3
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
+
+import 'dart:core' as $core;
+
+import 'package:protobuf/protobuf.dart' as $pb;
+
+import 'room.pb.dart' as $0;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
+/// Defines a level (world) that contains multiple rooms
+class FrogsoupLevelProto extends $pb.GeneratedMessage {
+  factory FrogsoupLevelProto({
+    $core.String? id,
+    $core.Iterable<$0.RoomProto>? rooms,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (rooms != null) result.rooms.addAll(rooms);
+    return result;
+  }
+
+  FrogsoupLevelProto._();
+
+  factory FrogsoupLevelProto.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FrogsoupLevelProto.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FrogsoupLevelProto',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'frogsoup.game'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..pPM<$0.RoomProto>(2, _omitFieldNames ? '' : 'rooms',
+        subBuilder: $0.RoomProto.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FrogsoupLevelProto clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FrogsoupLevelProto copyWith(void Function(FrogsoupLevelProto) updates) =>
+      super.copyWith((message) => updates(message as FrogsoupLevelProto))
+          as FrogsoupLevelProto;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FrogsoupLevelProto create() => FrogsoupLevelProto._();
+  @$core.override
+  FrogsoupLevelProto createEmptyInstance() => create();
+  static $pb.PbList<FrogsoupLevelProto> createRepeated() =>
+      $pb.PbList<FrogsoupLevelProto>();
+  @$core.pragma('dart2js:noInline')
+  static FrogsoupLevelProto getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FrogsoupLevelProto>(create);
+  static FrogsoupLevelProto? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$0.RoomProto> get rooms => $_getList(1);
+}
+
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');
