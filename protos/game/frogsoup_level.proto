@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package frogsoup.game;
 
-import "../../proto/game/game/room.proto";
+import "game/room.proto";
 
 // Defines a level (world) that contains multiple rooms
 message FrogsoupLevelProto {

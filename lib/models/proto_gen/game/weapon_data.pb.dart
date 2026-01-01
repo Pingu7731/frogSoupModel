@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -20,11 +20,21 @@ export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 class WeaponDataProto extends $pb.GeneratedMessage {
   factory WeaponDataProto({
     $core.Iterable<$core.String>? prompts,
-    $fixnum.Int64? damagePerPrompt,
+    $fixnum.Int64? minDamagePerPrompt,
+    $fixnum.Int64? maxDamagePerPrompt,
+    $fixnum.Int64? minStaggerPerPrompt,
+    $fixnum.Int64? maxStaggerPerPrompt,
   }) {
     final result = create();
     if (prompts != null) result.prompts.addAll(prompts);
-    if (damagePerPrompt != null) result.damagePerPrompt = damagePerPrompt;
+    if (minDamagePerPrompt != null)
+      result.minDamagePerPrompt = minDamagePerPrompt;
+    if (maxDamagePerPrompt != null)
+      result.maxDamagePerPrompt = maxDamagePerPrompt;
+    if (minStaggerPerPrompt != null)
+      result.minStaggerPerPrompt = minStaggerPerPrompt;
+    if (maxStaggerPerPrompt != null)
+      result.maxStaggerPerPrompt = maxStaggerPerPrompt;
     return result;
   }
 
@@ -43,8 +53,17 @@ class WeaponDataProto extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'prompts')
     ..a<$fixnum.Int64>(
-        2, _omitFieldNames ? '' : 'damagePerPrompt', $pb.PbFieldType.OU6,
-        protoName: 'damagePerPrompt', defaultOrMaker: $fixnum.Int64.ZERO)
+        2, _omitFieldNames ? '' : 'minDamagePerPrompt', $pb.PbFieldType.OU6,
+        protoName: 'minDamagePerPrompt', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(
+        3, _omitFieldNames ? '' : 'maxDamagePerPrompt', $pb.PbFieldType.OU6,
+        protoName: 'maxDamagePerPrompt', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(
+        4, _omitFieldNames ? '' : 'minStaggerPerPrompt', $pb.PbFieldType.OU6,
+        protoName: 'minStaggerPerPrompt', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(
+        5, _omitFieldNames ? '' : 'maxStaggerPerPrompt', $pb.PbFieldType.OU6,
+        protoName: 'maxStaggerPerPrompt', defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -61,8 +80,6 @@ class WeaponDataProto extends $pb.GeneratedMessage {
   static WeaponDataProto create() => WeaponDataProto._();
   @$core.override
   WeaponDataProto createEmptyInstance() => create();
-  static $pb.PbList<WeaponDataProto> createRepeated() =>
-      $pb.PbList<WeaponDataProto>();
   @$core.pragma('dart2js:noInline')
   static WeaponDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<WeaponDataProto>(create);
@@ -72,13 +89,40 @@ class WeaponDataProto extends $pb.GeneratedMessage {
   $pb.PbList<$core.String> get prompts => $_getList(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get damagePerPrompt => $_getI64(1);
+  $fixnum.Int64 get minDamagePerPrompt => $_getI64(1);
   @$pb.TagNumber(2)
-  set damagePerPrompt($fixnum.Int64 value) => $_setInt64(1, value);
+  set minDamagePerPrompt($fixnum.Int64 value) => $_setInt64(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasDamagePerPrompt() => $_has(1);
+  $core.bool hasMinDamagePerPrompt() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDamagePerPrompt() => $_clearField(2);
+  void clearMinDamagePerPrompt() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get maxDamagePerPrompt => $_getI64(2);
+  @$pb.TagNumber(3)
+  set maxDamagePerPrompt($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMaxDamagePerPrompt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaxDamagePerPrompt() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get minStaggerPerPrompt => $_getI64(3);
+  @$pb.TagNumber(4)
+  set minStaggerPerPrompt($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMinStaggerPerPrompt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMinStaggerPerPrompt() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get maxStaggerPerPrompt => $_getI64(4);
+  @$pb.TagNumber(5)
+  set maxStaggerPerPrompt($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMaxStaggerPerPrompt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMaxStaggerPerPrompt() => $_clearField(5);
 }
 
 const $core.bool _omitFieldNames =

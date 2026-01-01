@@ -7,12 +7,23 @@ targets:
           - lib/**
         options:
           # Optional: Add any builder-specific options here
+      frogsoup_model|type_registry_builder:
+        enabled: true
+        generate_for:
+          - lib/**
 
 builders:
   export_index_builder:
     target: frogsoup_model
     import: "package:frogsoup_model/build_tools/builder.dart"
     builder_factories: ["exportIndexBuilder"]
-    build_extensions: {"$lib$": ["frogsoup_model_exports.dart"]}
+    build_extensions: { "$lib$": ["frogsoup_model_exports.dart"] }
+    auto_apply: dependents
+    build_to: source
+  type_registry_builder:
+    target: frogsoup_model
+    import: "package:frogsoup_model/build_tools/type_registry_builder.dart"
+    builder_factories: ["typeRegistryBuilder"]
+    build_extensions: { "$lib$": ["frogsoup_type_registry.g.dart"] }
     auto_apply: dependents
     build_to: source

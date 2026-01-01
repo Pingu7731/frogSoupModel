@@ -2,9 +2,12 @@ syntax = "proto3";
 
 package frogsoup.game;
 
-import "../../proto/game/google/protobuf/any.proto";
+import "google/protobuf/any.proto";
 
 message WeaponDataProto {
   repeated string prompts = 1;
-  uint64 damagePerPrompt = 2;
+  uint64 minDamagePerPrompt = 2;
+  uint64 maxDamagePerPrompt = 3;
+  uint64 minStaggerPerPrompt = 4;
+  uint64 maxStaggerPerPrompt = 5;
 }
