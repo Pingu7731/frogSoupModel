@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package frogsoup.game;
+
+import 'google/protobuf/any.proto';
+
+message CharacterProto {
+  int64 positionX = 2;
+  int64 positionY = 3;
+  string name = 4;
+  uint64 maxHp = 5;
+  uint64 hp = 6;
+  google.protobuf.Any display = 7;
+  uint32 sizeX = 8;
+  uint32 sizeY = 9;
+  google.protobuf.Any npcCombatBehavior = 10;
+  uint64 stagger = 11;
+  uint64 maxStagger = 12;
+}
+
+message TypingNpcBehaviorProto {
+  string prompt = 1;
+  int32 minIntervalMs = 2;
+  int32 maxIntervalMs = 3;
+  int32 minStaggerRevert = 4;
+  int32 maxStaggerRevert = 5;
+  int32 minStaggerDurationMs = 6;
+  int32 maxStaggerDurationMs = 7;
+}

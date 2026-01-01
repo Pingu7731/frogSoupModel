@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package frogsoup.game;
+
+message AnimatedSpriteDisplayProto {
+  string assetPath = 1;
+  uint32 frameTimeMs = 2;
+  uint32 frameCount = 3;
+  uint32 frameSizeX = 4;
+  uint32 frameSizeY = 5;
+  uint32 displaySizeX = 6;
+  uint32 displaySizeY = 7;
+}
