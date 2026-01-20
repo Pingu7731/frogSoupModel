@@ -10,4 +10,5 @@ message WeaponDataProto {
   uint64 maxDamagePerPrompt = 3;
   uint64 minStaggerPerPrompt = 4;
   uint64 maxStaggerPerPrompt = 5;
+  repeated google.protobuf.Any projectileDisplays = 6;
 }

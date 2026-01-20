@@ -2,6 +2,12 @@ syntax = "proto3";
 
 package frogsoup.game;
 
+message SpriteDisplayProto {
+  string assetPath = 1;
+  uint32 displaySizeX = 2;
+  uint32 displaySizeY = 3;
+}
+
 message AnimatedSpriteDisplayProto {
   string assetPath = 1;
   uint32 frameTimeMs = 2;

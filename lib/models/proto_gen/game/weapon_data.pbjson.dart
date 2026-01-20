@@ -48,6 +48,14 @@ const WeaponDataProto$json = {
       '5': 4,
       '10': 'maxStaggerPerPrompt'
     },
+    {
+      '1': 'projectileDisplays',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.google.protobuf.Any',
+      '10': 'projectileDisplays'
+    },
   ],
 };
 
@@ -57,4 +65,5 @@ final $typed_data.Uint8List weaponDataProtoDescriptor = $convert.base64Decode(
     'VQZXJQcm9tcHQYAiABKARSEm1pbkRhbWFnZVBlclByb21wdBIuChJtYXhEYW1hZ2VQZXJQcm9t'
     'cHQYAyABKARSEm1heERhbWFnZVBlclByb21wdBIwChNtaW5TdGFnZ2VyUGVyUHJvbXB0GAQgAS'
     'gEUhNtaW5TdGFnZ2VyUGVyUHJvbXB0EjAKE21heFN0YWdnZXJQZXJQcm9tcHQYBSABKARSE21h'
-    'eFN0YWdnZXJQZXJQcm9tcHQ=');
+    'eFN0YWdnZXJQZXJQcm9tcHQSRAoScHJvamVjdGlsZURpc3BsYXlzGAYgAygLMhQuZ29vZ2xlLn'
+    'Byb3RvYnVmLkFueVIScHJvamVjdGlsZURpc3BsYXlz');

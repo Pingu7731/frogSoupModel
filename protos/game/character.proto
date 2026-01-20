@@ -10,12 +10,13 @@ message CharacterProto {
   string name = 4;
   uint64 maxHp = 5;
   uint64 hp = 6;
-  google.protobuf.Any display = 7;
   uint32 sizeX = 8;
   uint32 sizeY = 9;
   google.protobuf.Any npcCombatBehavior = 10;
   uint64 stagger = 11;
   uint64 maxStagger = 12;
+  google.protobuf.Any idleDisplay = 13;
+  google.protobuf.Any walkDisplay = 14;
 }
 
 message TypingNpcBehaviorProto {

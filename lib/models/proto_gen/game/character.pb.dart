@@ -25,12 +25,13 @@ class CharacterProto extends $pb.GeneratedMessage {
     $core.String? name,
     $fixnum.Int64? maxHp,
     $fixnum.Int64? hp,
-    $0.Any? display,
     $core.int? sizeX,
     $core.int? sizeY,
     $0.Any? npcCombatBehavior,
     $fixnum.Int64? stagger,
     $fixnum.Int64? maxStagger,
+    $0.Any? idleDisplay,
+    $0.Any? walkDisplay,
   }) {
     final result = create();
     if (positionX != null) result.positionX = positionX;
@@ -38,12 +39,13 @@ class CharacterProto extends $pb.GeneratedMessage {
     if (name != null) result.name = name;
     if (maxHp != null) result.maxHp = maxHp;
     if (hp != null) result.hp = hp;
-    if (display != null) result.display = display;
     if (sizeX != null) result.sizeX = sizeX;
     if (sizeY != null) result.sizeY = sizeY;
     if (npcCombatBehavior != null) result.npcCombatBehavior = npcCombatBehavior;
     if (stagger != null) result.stagger = stagger;
     if (maxStagger != null) result.maxStagger = maxStagger;
+    if (idleDisplay != null) result.idleDisplay = idleDisplay;
+    if (walkDisplay != null) result.walkDisplay = walkDisplay;
     return result;
   }
 
@@ -67,8 +69,6 @@ class CharacterProto extends $pb.GeneratedMessage {
         protoName: 'maxHp', defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'hp', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$0.Any>(7, _omitFieldNames ? '' : 'display',
-        subBuilder: $0.Any.create)
     ..aI(8, _omitFieldNames ? '' : 'sizeX',
         protoName: 'sizeX', fieldType: $pb.PbFieldType.OU3)
     ..aI(9, _omitFieldNames ? '' : 'sizeY',
@@ -81,6 +81,10 @@ class CharacterProto extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(
         12, _omitFieldNames ? '' : 'maxStagger', $pb.PbFieldType.OU6,
         protoName: 'maxStagger', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOM<$0.Any>(13, _omitFieldNames ? '' : 'idleDisplay',
+        protoName: 'idleDisplay', subBuilder: $0.Any.create)
+    ..aOM<$0.Any>(14, _omitFieldNames ? '' : 'walkDisplay',
+        protoName: 'walkDisplay', subBuilder: $0.Any.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -147,63 +151,74 @@ class CharacterProto extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearHp() => $_clearField(6);
 
-  @$pb.TagNumber(7)
-  $0.Any get display => $_getN(5);
-  @$pb.TagNumber(7)
-  set display($0.Any value) => $_setField(7, value);
-  @$pb.TagNumber(7)
-  $core.bool hasDisplay() => $_has(5);
-  @$pb.TagNumber(7)
-  void clearDisplay() => $_clearField(7);
-  @$pb.TagNumber(7)
-  $0.Any ensureDisplay() => $_ensure(5);
-
   @$pb.TagNumber(8)
-  $core.int get sizeX => $_getIZ(6);
+  $core.int get sizeX => $_getIZ(5);
   @$pb.TagNumber(8)
-  set sizeX($core.int value) => $_setUnsignedInt32(6, value);
+  set sizeX($core.int value) => $_setUnsignedInt32(5, value);
   @$pb.TagNumber(8)
-  $core.bool hasSizeX() => $_has(6);
+  $core.bool hasSizeX() => $_has(5);
   @$pb.TagNumber(8)
   void clearSizeX() => $_clearField(8);
 
   @$pb.TagNumber(9)
-  $core.int get sizeY => $_getIZ(7);
+  $core.int get sizeY => $_getIZ(6);
   @$pb.TagNumber(9)
-  set sizeY($core.int value) => $_setUnsignedInt32(7, value);
+  set sizeY($core.int value) => $_setUnsignedInt32(6, value);
   @$pb.TagNumber(9)
-  $core.bool hasSizeY() => $_has(7);
+  $core.bool hasSizeY() => $_has(6);
   @$pb.TagNumber(9)
   void clearSizeY() => $_clearField(9);
 
   @$pb.TagNumber(10)
-  $0.Any get npcCombatBehavior => $_getN(8);
+  $0.Any get npcCombatBehavior => $_getN(7);
   @$pb.TagNumber(10)
   set npcCombatBehavior($0.Any value) => $_setField(10, value);
   @$pb.TagNumber(10)
-  $core.bool hasNpcCombatBehavior() => $_has(8);
+  $core.bool hasNpcCombatBehavior() => $_has(7);
   @$pb.TagNumber(10)
   void clearNpcCombatBehavior() => $_clearField(10);
   @$pb.TagNumber(10)
-  $0.Any ensureNpcCombatBehavior() => $_ensure(8);
+  $0.Any ensureNpcCombatBehavior() => $_ensure(7);
 
   @$pb.TagNumber(11)
-  $fixnum.Int64 get stagger => $_getI64(9);
+  $fixnum.Int64 get stagger => $_getI64(8);
   @$pb.TagNumber(11)
-  set stagger($fixnum.Int64 value) => $_setInt64(9, value);
+  set stagger($fixnum.Int64 value) => $_setInt64(8, value);
   @$pb.TagNumber(11)
-  $core.bool hasStagger() => $_has(9);
+  $core.bool hasStagger() => $_has(8);
   @$pb.TagNumber(11)
   void clearStagger() => $_clearField(11);
 
   @$pb.TagNumber(12)
-  $fixnum.Int64 get maxStagger => $_getI64(10);
+  $fixnum.Int64 get maxStagger => $_getI64(9);
   @$pb.TagNumber(12)
-  set maxStagger($fixnum.Int64 value) => $_setInt64(10, value);
+  set maxStagger($fixnum.Int64 value) => $_setInt64(9, value);
   @$pb.TagNumber(12)
-  $core.bool hasMaxStagger() => $_has(10);
+  $core.bool hasMaxStagger() => $_has(9);
   @$pb.TagNumber(12)
   void clearMaxStagger() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $0.Any get idleDisplay => $_getN(10);
+  @$pb.TagNumber(13)
+  set idleDisplay($0.Any value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasIdleDisplay() => $_has(10);
+  @$pb.TagNumber(13)
+  void clearIdleDisplay() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $0.Any ensureIdleDisplay() => $_ensure(10);
+
+  @$pb.TagNumber(14)
+  $0.Any get walkDisplay => $_getN(11);
+  @$pb.TagNumber(14)
+  set walkDisplay($0.Any value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasWalkDisplay() => $_has(11);
+  @$pb.TagNumber(14)
+  void clearWalkDisplay() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $0.Any ensureWalkDisplay() => $_ensure(11);
 }
 
 class TypingNpcBehaviorProto extends $pb.GeneratedMessage {

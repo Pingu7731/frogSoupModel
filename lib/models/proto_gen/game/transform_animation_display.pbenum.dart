@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from game/animated_sprite_display.proto.
+// Generated from game/transform_animation_display.proto.
 
 // @dart = 3.3
 

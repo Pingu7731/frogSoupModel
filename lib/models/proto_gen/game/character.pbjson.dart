@@ -24,14 +24,6 @@ const CharacterProto$json = {
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
     {'1': 'maxHp', '3': 5, '4': 1, '5': 4, '10': 'maxHp'},
     {'1': 'hp', '3': 6, '4': 1, '5': 4, '10': 'hp'},
-    {
-      '1': 'display',
-      '3': 7,
-      '4': 1,
-      '5': 11,
-      '6': '.google.protobuf.Any',
-      '10': 'display'
-    },
     {'1': 'sizeX', '3': 8, '4': 1, '5': 13, '10': 'sizeX'},
     {'1': 'sizeY', '3': 9, '4': 1, '5': 13, '10': 'sizeY'},
     {
@@ -44,6 +36,22 @@ const CharacterProto$json = {
     },
     {'1': 'stagger', '3': 11, '4': 1, '5': 4, '10': 'stagger'},
     {'1': 'maxStagger', '3': 12, '4': 1, '5': 4, '10': 'maxStagger'},
+    {
+      '1': 'idleDisplay',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Any',
+      '10': 'idleDisplay'
+    },
+    {
+      '1': 'walkDisplay',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Any',
+      '10': 'walkDisplay'
+    },
   ],
 };
 
@@ -51,11 +59,12 @@ const CharacterProto$json = {
 final $typed_data.Uint8List characterProtoDescriptor = $convert.base64Decode(
     'Cg5DaGFyYWN0ZXJQcm90bxIcCglwb3NpdGlvblgYAiABKANSCXBvc2l0aW9uWBIcCglwb3NpdG'
     'lvblkYAyABKANSCXBvc2l0aW9uWRISCgRuYW1lGAQgASgJUgRuYW1lEhQKBW1heEhwGAUgASgE'
-    'UgVtYXhIcBIOCgJocBgGIAEoBFICaHASLgoHZGlzcGxheRgHIAEoCzIULmdvb2dsZS5wcm90b2'
-    'J1Zi5BbnlSB2Rpc3BsYXkSFAoFc2l6ZVgYCCABKA1SBXNpemVYEhQKBXNpemVZGAkgASgNUgVz'
-    'aXplWRJCChFucGNDb21iYXRCZWhhdmlvchgKIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlSEW'
-    '5wY0NvbWJhdEJlaGF2aW9yEhgKB3N0YWdnZXIYCyABKARSB3N0YWdnZXISHgoKbWF4U3RhZ2dl'
-    'chgMIAEoBFIKbWF4U3RhZ2dlcg==');
+    'UgVtYXhIcBIOCgJocBgGIAEoBFICaHASFAoFc2l6ZVgYCCABKA1SBXNpemVYEhQKBXNpemVZGA'
+    'kgASgNUgVzaXplWRJCChFucGNDb21iYXRCZWhhdmlvchgKIAEoCzIULmdvb2dsZS5wcm90b2J1'
+    'Zi5BbnlSEW5wY0NvbWJhdEJlaGF2aW9yEhgKB3N0YWdnZXIYCyABKARSB3N0YWdnZXISHgoKbW'
+    'F4U3RhZ2dlchgMIAEoBFIKbWF4U3RhZ2dlchI2CgtpZGxlRGlzcGxheRgNIAEoCzIULmdvb2ds'
+    'ZS5wcm90b2J1Zi5BbnlSC2lkbGVEaXNwbGF5EjYKC3dhbGtEaXNwbGF5GA4gASgLMhQuZ29vZ2'
+    'xlLnByb3RvYnVmLkFueVILd2Fsa0Rpc3BsYXk=');
 
 @$core.Deprecated('Use typingNpcBehaviorProtoDescriptor instead')
 const TypingNpcBehaviorProto$json = {

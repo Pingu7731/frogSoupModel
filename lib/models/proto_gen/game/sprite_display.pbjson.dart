@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from game/animated_sprite_display.proto.
+// Generated from game/sprite_display.proto.
 
 // @dart = 3.3
 
@@ -14,6 +14,22 @@
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
+
+@$core.Deprecated('Use spriteDisplayProtoDescriptor instead')
+const SpriteDisplayProto$json = {
+  '1': 'SpriteDisplayProto',
+  '2': [
+    {'1': 'assetPath', '3': 1, '4': 1, '5': 9, '10': 'assetPath'},
+    {'1': 'displaySizeX', '3': 2, '4': 1, '5': 13, '10': 'displaySizeX'},
+    {'1': 'displaySizeY', '3': 3, '4': 1, '5': 13, '10': 'displaySizeY'},
+  ],
+};
+
+/// Descriptor for `SpriteDisplayProto`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spriteDisplayProtoDescriptor = $convert.base64Decode(
+    'ChJTcHJpdGVEaXNwbGF5UHJvdG8SHAoJYXNzZXRQYXRoGAEgASgJUglhc3NldFBhdGgSIgoMZG'
+    'lzcGxheVNpemVYGAIgASgNUgxkaXNwbGF5U2l6ZVgSIgoMZGlzcGxheVNpemVZGAMgASgNUgxk'
+    'aXNwbGF5U2l6ZVk=');
 
 @$core.Deprecated('Use animatedSpriteDisplayProtoDescriptor instead')
 const AnimatedSpriteDisplayProto$json = {

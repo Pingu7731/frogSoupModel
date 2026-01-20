@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/any.pb.dart' as $0;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -24,6 +25,7 @@ class WeaponDataProto extends $pb.GeneratedMessage {
     $fixnum.Int64? maxDamagePerPrompt,
     $fixnum.Int64? minStaggerPerPrompt,
     $fixnum.Int64? maxStaggerPerPrompt,
+    $core.Iterable<$0.Any>? projectileDisplays,
   }) {
     final result = create();
     if (prompts != null) result.prompts.addAll(prompts);
@@ -35,6 +37,8 @@ class WeaponDataProto extends $pb.GeneratedMessage {
       result.minStaggerPerPrompt = minStaggerPerPrompt;
     if (maxStaggerPerPrompt != null)
       result.maxStaggerPerPrompt = maxStaggerPerPrompt;
+    if (projectileDisplays != null)
+      result.projectileDisplays.addAll(projectileDisplays);
     return result;
   }
 
@@ -64,6 +68,8 @@ class WeaponDataProto extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(
         5, _omitFieldNames ? '' : 'maxStaggerPerPrompt', $pb.PbFieldType.OU6,
         protoName: 'maxStaggerPerPrompt', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..pPM<$0.Any>(6, _omitFieldNames ? '' : 'projectileDisplays',
+        protoName: 'projectileDisplays', subBuilder: $0.Any.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -123,6 +129,9 @@ class WeaponDataProto extends $pb.GeneratedMessage {
   $core.bool hasMaxStaggerPerPrompt() => $_has(4);
   @$pb.TagNumber(5)
   void clearMaxStaggerPerPrompt() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<$0.Any> get projectileDisplays => $_getList(5);
 }
 
 const $core.bool _omitFieldNames =

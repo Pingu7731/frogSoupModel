@@ -5,12 +5,14 @@ import 'package:frogsoup_model/frogsoup_model_exports.dart';
 import 'package:protobuf/protobuf.dart';
 
 final frogsoupTypeRegistry = TypeRegistry([
-  AnimatedSpriteDisplayProto.getDefault(),
   CharacterProto.getDefault(),
   TypingNpcBehaviorProto.getDefault(),
   FrogsoupLevelProto.getDefault(),
   ItemProto.getDefault(),
   RoomProto.getDefault(),
+  SpriteDisplayProto.getDefault(),
+  AnimatedSpriteDisplayProto.getDefault(),
+  RotateAnimationDisplayProto.getDefault(),
   WeaponDataProto.getDefault(),
 ]);
     

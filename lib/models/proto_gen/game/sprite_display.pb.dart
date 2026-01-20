@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from game/animated_sprite_display.proto.
+// Generated from game/sprite_display.proto.
 
 // @dart = 3.3
 
@@ -15,6 +15,86 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
+class SpriteDisplayProto extends $pb.GeneratedMessage {
+  factory SpriteDisplayProto({
+    $core.String? assetPath,
+    $core.int? displaySizeX,
+    $core.int? displaySizeY,
+  }) {
+    final result = create();
+    if (assetPath != null) result.assetPath = assetPath;
+    if (displaySizeX != null) result.displaySizeX = displaySizeX;
+    if (displaySizeY != null) result.displaySizeY = displaySizeY;
+    return result;
+  }
+
+  SpriteDisplayProto._();
+
+  factory SpriteDisplayProto.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpriteDisplayProto.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpriteDisplayProto',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'frogsoup.game'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'assetPath', protoName: 'assetPath')
+    ..aI(2, _omitFieldNames ? '' : 'displaySizeX',
+        protoName: 'displaySizeX', fieldType: $pb.PbFieldType.OU3)
+    ..aI(3, _omitFieldNames ? '' : 'displaySizeY',
+        protoName: 'displaySizeY', fieldType: $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpriteDisplayProto clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpriteDisplayProto copyWith(void Function(SpriteDisplayProto) updates) =>
+      super.copyWith((message) => updates(message as SpriteDisplayProto))
+          as SpriteDisplayProto;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpriteDisplayProto create() => SpriteDisplayProto._();
+  @$core.override
+  SpriteDisplayProto createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpriteDisplayProto getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpriteDisplayProto>(create);
+  static SpriteDisplayProto? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get assetPath => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set assetPath($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssetPath() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssetPath() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get displaySizeX => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set displaySizeX($core.int value) => $_setUnsignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDisplaySizeX() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisplaySizeX() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get displaySizeY => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set displaySizeY($core.int value) => $_setUnsignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDisplaySizeY() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDisplaySizeY() => $_clearField(3);
+}
 
 class AnimatedSpriteDisplayProto extends $pb.GeneratedMessage {
   factory AnimatedSpriteDisplayProto({
