@@ -2,29 +2,34 @@ syntax = "proto3";
 
 package frogsoup.game;
 
+import 'game/damageable_value.proto';
 import 'google/protobuf/any.proto';
 
 message CharacterProto {
-  int64 positionX = 2;
-  int64 positionY = 3;
+  int64 position_x = 2;
+  int64 position_y = 3;
   string name = 4;
-  uint64 maxHp = 5;
-  uint64 hp = 6;
-  uint32 sizeX = 8;
-  uint32 sizeY = 9;
-  google.protobuf.Any npcCombatBehavior = 10;
-  uint64 stagger = 11;
-  uint64 maxStagger = 12;
-  google.protobuf.Any idleDisplay = 13;
-  google.protobuf.Any walkDisplay = 14;
+  DamageableValueProto hp = 5;
+  DamageableValueProto stagger = 6;
+  uint32 size_x = 8;
+  uint32 size_y = 9;
+  google.protobuf.Any npc_combat_behavior = 10;
+  google.protobuf.Any idle_display = 13;
+  google.protobuf.Any walk_display = 14;
 }
 
 message TypingNpcBehaviorProto {
   string prompt = 1;
-  int32 minIntervalMs = 2;
-  int32 maxIntervalMs = 3;
-  int32 minStaggerRevert = 4;
-  int32 maxStaggerRevert = 5;
-  int32 minStaggerDurationMs = 6;
-  int32 maxStaggerDurationMs = 7;
+  int32 min_interval_ms = 2;
+  int32 max_interval_ms = 3;
+  int32 min_stagger_revert = 4;
+  int32 max_stagger_revert = 5;
+  int32 min_stagger_duration_ms = 6;
+  int32 max_stagger_duration_ms = 7;
+}
+
+message PromptTargetingNpcBehaviorProto {
+  google.protobuf.Any targeting_interval_random_variable = 1;
+  double emission_per_second = 2;
+  int32 particle_hits_to_break = 3;
 }

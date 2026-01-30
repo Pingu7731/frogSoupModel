@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package frogsoup.game;
+
+import 'google/protobuf/any.proto';
+
+message DamageableValueProto {
+  uint64 value = 1;
+  uint64 max_value = 2;
+}

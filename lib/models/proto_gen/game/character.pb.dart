@@ -14,7 +14,9 @@ import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
-import 'package:protobuf/well_known_types/google/protobuf/any.pb.dart' as $0;
+import 'package:protobuf/well_known_types/google/protobuf/any.pb.dart' as $1;
+
+import 'damageable_value.pb.dart' as $0;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -23,27 +25,23 @@ class CharacterProto extends $pb.GeneratedMessage {
     $fixnum.Int64? positionX,
     $fixnum.Int64? positionY,
     $core.String? name,
-    $fixnum.Int64? maxHp,
-    $fixnum.Int64? hp,
+    $0.DamageableValueProto? hp,
+    $0.DamageableValueProto? stagger,
     $core.int? sizeX,
     $core.int? sizeY,
-    $0.Any? npcCombatBehavior,
-    $fixnum.Int64? stagger,
-    $fixnum.Int64? maxStagger,
-    $0.Any? idleDisplay,
-    $0.Any? walkDisplay,
+    $1.Any? npcCombatBehavior,
+    $1.Any? idleDisplay,
+    $1.Any? walkDisplay,
   }) {
     final result = create();
     if (positionX != null) result.positionX = positionX;
     if (positionY != null) result.positionY = positionY;
     if (name != null) result.name = name;
-    if (maxHp != null) result.maxHp = maxHp;
     if (hp != null) result.hp = hp;
+    if (stagger != null) result.stagger = stagger;
     if (sizeX != null) result.sizeX = sizeX;
     if (sizeY != null) result.sizeY = sizeY;
     if (npcCombatBehavior != null) result.npcCombatBehavior = npcCombatBehavior;
-    if (stagger != null) result.stagger = stagger;
-    if (maxStagger != null) result.maxStagger = maxStagger;
     if (idleDisplay != null) result.idleDisplay = idleDisplay;
     if (walkDisplay != null) result.walkDisplay = walkDisplay;
     return result;
@@ -62,29 +60,21 @@ class CharacterProto extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'CharacterProto',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'frogsoup.game'),
       createEmptyInstance: create)
-    ..aInt64(2, _omitFieldNames ? '' : 'positionX', protoName: 'positionX')
-    ..aInt64(3, _omitFieldNames ? '' : 'positionY', protoName: 'positionY')
+    ..aInt64(2, _omitFieldNames ? '' : 'positionX')
+    ..aInt64(3, _omitFieldNames ? '' : 'positionY')
     ..aOS(4, _omitFieldNames ? '' : 'name')
-    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'maxHp', $pb.PbFieldType.OU6,
-        protoName: 'maxHp', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'hp', $pb.PbFieldType.OU6,
-        defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aI(8, _omitFieldNames ? '' : 'sizeX',
-        protoName: 'sizeX', fieldType: $pb.PbFieldType.OU3)
-    ..aI(9, _omitFieldNames ? '' : 'sizeY',
-        protoName: 'sizeY', fieldType: $pb.PbFieldType.OU3)
-    ..aOM<$0.Any>(10, _omitFieldNames ? '' : 'npcCombatBehavior',
-        protoName: 'npcCombatBehavior', subBuilder: $0.Any.create)
-    ..a<$fixnum.Int64>(
-        11, _omitFieldNames ? '' : 'stagger', $pb.PbFieldType.OU6,
-        defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(
-        12, _omitFieldNames ? '' : 'maxStagger', $pb.PbFieldType.OU6,
-        protoName: 'maxStagger', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$0.Any>(13, _omitFieldNames ? '' : 'idleDisplay',
-        protoName: 'idleDisplay', subBuilder: $0.Any.create)
-    ..aOM<$0.Any>(14, _omitFieldNames ? '' : 'walkDisplay',
-        protoName: 'walkDisplay', subBuilder: $0.Any.create)
+    ..aOM<$0.DamageableValueProto>(5, _omitFieldNames ? '' : 'hp',
+        subBuilder: $0.DamageableValueProto.create)
+    ..aOM<$0.DamageableValueProto>(6, _omitFieldNames ? '' : 'stagger',
+        subBuilder: $0.DamageableValueProto.create)
+    ..aI(8, _omitFieldNames ? '' : 'sizeX', fieldType: $pb.PbFieldType.OU3)
+    ..aI(9, _omitFieldNames ? '' : 'sizeY', fieldType: $pb.PbFieldType.OU3)
+    ..aOM<$1.Any>(10, _omitFieldNames ? '' : 'npcCombatBehavior',
+        subBuilder: $1.Any.create)
+    ..aOM<$1.Any>(13, _omitFieldNames ? '' : 'idleDisplay',
+        subBuilder: $1.Any.create)
+    ..aOM<$1.Any>(14, _omitFieldNames ? '' : 'walkDisplay',
+        subBuilder: $1.Any.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -134,22 +124,26 @@ class CharacterProto extends $pb.GeneratedMessage {
   void clearName() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get maxHp => $_getI64(3);
+  $0.DamageableValueProto get hp => $_getN(3);
   @$pb.TagNumber(5)
-  set maxHp($fixnum.Int64 value) => $_setInt64(3, value);
+  set hp($0.DamageableValueProto value) => $_setField(5, value);
   @$pb.TagNumber(5)
-  $core.bool hasMaxHp() => $_has(3);
+  $core.bool hasHp() => $_has(3);
   @$pb.TagNumber(5)
-  void clearMaxHp() => $_clearField(5);
+  void clearHp() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $0.DamageableValueProto ensureHp() => $_ensure(3);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get hp => $_getI64(4);
+  $0.DamageableValueProto get stagger => $_getN(4);
   @$pb.TagNumber(6)
-  set hp($fixnum.Int64 value) => $_setInt64(4, value);
+  set stagger($0.DamageableValueProto value) => $_setField(6, value);
   @$pb.TagNumber(6)
-  $core.bool hasHp() => $_has(4);
+  $core.bool hasStagger() => $_has(4);
   @$pb.TagNumber(6)
-  void clearHp() => $_clearField(6);
+  void clearStagger() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $0.DamageableValueProto ensureStagger() => $_ensure(4);
 
   @$pb.TagNumber(8)
   $core.int get sizeX => $_getIZ(5);
@@ -170,55 +164,37 @@ class CharacterProto extends $pb.GeneratedMessage {
   void clearSizeY() => $_clearField(9);
 
   @$pb.TagNumber(10)
-  $0.Any get npcCombatBehavior => $_getN(7);
+  $1.Any get npcCombatBehavior => $_getN(7);
   @$pb.TagNumber(10)
-  set npcCombatBehavior($0.Any value) => $_setField(10, value);
+  set npcCombatBehavior($1.Any value) => $_setField(10, value);
   @$pb.TagNumber(10)
   $core.bool hasNpcCombatBehavior() => $_has(7);
   @$pb.TagNumber(10)
   void clearNpcCombatBehavior() => $_clearField(10);
   @$pb.TagNumber(10)
-  $0.Any ensureNpcCombatBehavior() => $_ensure(7);
-
-  @$pb.TagNumber(11)
-  $fixnum.Int64 get stagger => $_getI64(8);
-  @$pb.TagNumber(11)
-  set stagger($fixnum.Int64 value) => $_setInt64(8, value);
-  @$pb.TagNumber(11)
-  $core.bool hasStagger() => $_has(8);
-  @$pb.TagNumber(11)
-  void clearStagger() => $_clearField(11);
-
-  @$pb.TagNumber(12)
-  $fixnum.Int64 get maxStagger => $_getI64(9);
-  @$pb.TagNumber(12)
-  set maxStagger($fixnum.Int64 value) => $_setInt64(9, value);
-  @$pb.TagNumber(12)
-  $core.bool hasMaxStagger() => $_has(9);
-  @$pb.TagNumber(12)
-  void clearMaxStagger() => $_clearField(12);
+  $1.Any ensureNpcCombatBehavior() => $_ensure(7);
 
   @$pb.TagNumber(13)
-  $0.Any get idleDisplay => $_getN(10);
+  $1.Any get idleDisplay => $_getN(8);
   @$pb.TagNumber(13)
-  set idleDisplay($0.Any value) => $_setField(13, value);
+  set idleDisplay($1.Any value) => $_setField(13, value);
   @$pb.TagNumber(13)
-  $core.bool hasIdleDisplay() => $_has(10);
+  $core.bool hasIdleDisplay() => $_has(8);
   @$pb.TagNumber(13)
   void clearIdleDisplay() => $_clearField(13);
   @$pb.TagNumber(13)
-  $0.Any ensureIdleDisplay() => $_ensure(10);
+  $1.Any ensureIdleDisplay() => $_ensure(8);
 
   @$pb.TagNumber(14)
-  $0.Any get walkDisplay => $_getN(11);
+  $1.Any get walkDisplay => $_getN(9);
   @$pb.TagNumber(14)
-  set walkDisplay($0.Any value) => $_setField(14, value);
+  set walkDisplay($1.Any value) => $_setField(14, value);
   @$pb.TagNumber(14)
-  $core.bool hasWalkDisplay() => $_has(11);
+  $core.bool hasWalkDisplay() => $_has(9);
   @$pb.TagNumber(14)
   void clearWalkDisplay() => $_clearField(14);
   @$pb.TagNumber(14)
-  $0.Any ensureWalkDisplay() => $_ensure(11);
+  $1.Any ensureWalkDisplay() => $_ensure(9);
 }
 
 class TypingNpcBehaviorProto extends $pb.GeneratedMessage {
@@ -258,16 +234,12 @@ class TypingNpcBehaviorProto extends $pb.GeneratedMessage {
       package: const $pb.PackageName(_omitMessageNames ? '' : 'frogsoup.game'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'prompt')
-    ..aI(2, _omitFieldNames ? '' : 'minIntervalMs', protoName: 'minIntervalMs')
-    ..aI(3, _omitFieldNames ? '' : 'maxIntervalMs', protoName: 'maxIntervalMs')
-    ..aI(4, _omitFieldNames ? '' : 'minStaggerRevert',
-        protoName: 'minStaggerRevert')
-    ..aI(5, _omitFieldNames ? '' : 'maxStaggerRevert',
-        protoName: 'maxStaggerRevert')
-    ..aI(6, _omitFieldNames ? '' : 'minStaggerDurationMs',
-        protoName: 'minStaggerDurationMs')
-    ..aI(7, _omitFieldNames ? '' : 'maxStaggerDurationMs',
-        protoName: 'maxStaggerDurationMs')
+    ..aI(2, _omitFieldNames ? '' : 'minIntervalMs')
+    ..aI(3, _omitFieldNames ? '' : 'maxIntervalMs')
+    ..aI(4, _omitFieldNames ? '' : 'minStaggerRevert')
+    ..aI(5, _omitFieldNames ? '' : 'maxStaggerRevert')
+    ..aI(6, _omitFieldNames ? '' : 'minStaggerDurationMs')
+    ..aI(7, _omitFieldNames ? '' : 'maxStaggerDurationMs')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -352,6 +324,93 @@ class TypingNpcBehaviorProto extends $pb.GeneratedMessage {
   $core.bool hasMaxStaggerDurationMs() => $_has(6);
   @$pb.TagNumber(7)
   void clearMaxStaggerDurationMs() => $_clearField(7);
+}
+
+class PromptTargetingNpcBehaviorProto extends $pb.GeneratedMessage {
+  factory PromptTargetingNpcBehaviorProto({
+    $1.Any? targetingIntervalRandomVariable,
+    $core.double? emissionPerSecond,
+    $core.int? particleHitsToBreak,
+  }) {
+    final result = create();
+    if (targetingIntervalRandomVariable != null)
+      result.targetingIntervalRandomVariable = targetingIntervalRandomVariable;
+    if (emissionPerSecond != null) result.emissionPerSecond = emissionPerSecond;
+    if (particleHitsToBreak != null)
+      result.particleHitsToBreak = particleHitsToBreak;
+    return result;
+  }
+
+  PromptTargetingNpcBehaviorProto._();
+
+  factory PromptTargetingNpcBehaviorProto.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PromptTargetingNpcBehaviorProto.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PromptTargetingNpcBehaviorProto',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'frogsoup.game'),
+      createEmptyInstance: create)
+    ..aOM<$1.Any>(1, _omitFieldNames ? '' : 'targetingIntervalRandomVariable',
+        subBuilder: $1.Any.create)
+    ..aD(2, _omitFieldNames ? '' : 'emissionPerSecond')
+    ..aI(3, _omitFieldNames ? '' : 'particleHitsToBreak')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PromptTargetingNpcBehaviorProto clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PromptTargetingNpcBehaviorProto copyWith(
+          void Function(PromptTargetingNpcBehaviorProto) updates) =>
+      super.copyWith(
+              (message) => updates(message as PromptTargetingNpcBehaviorProto))
+          as PromptTargetingNpcBehaviorProto;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PromptTargetingNpcBehaviorProto create() =>
+      PromptTargetingNpcBehaviorProto._();
+  @$core.override
+  PromptTargetingNpcBehaviorProto createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PromptTargetingNpcBehaviorProto getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PromptTargetingNpcBehaviorProto>(
+          create);
+  static PromptTargetingNpcBehaviorProto? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.Any get targetingIntervalRandomVariable => $_getN(0);
+  @$pb.TagNumber(1)
+  set targetingIntervalRandomVariable($1.Any value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetingIntervalRandomVariable() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetingIntervalRandomVariable() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $1.Any ensureTargetingIntervalRandomVariable() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.double get emissionPerSecond => $_getN(1);
+  @$pb.TagNumber(2)
+  set emissionPerSecond($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEmissionPerSecond() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEmissionPerSecond() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get particleHitsToBreak => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set particleHitsToBreak($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasParticleHitsToBreak() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearParticleHitsToBreak() => $_clearField(3);
 }
 
 const $core.bool _omitFieldNames =

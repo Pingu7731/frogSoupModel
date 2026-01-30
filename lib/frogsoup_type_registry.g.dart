@@ -7,8 +7,13 @@ import 'package:protobuf/protobuf.dart';
 final frogsoupTypeRegistry = TypeRegistry([
   CharacterProto.getDefault(),
   TypingNpcBehaviorProto.getDefault(),
+  PromptTargetingNpcBehaviorProto.getDefault(),
+  DamageableValueProto.getDefault(),
   FrogsoupLevelProto.getDefault(),
   ItemProto.getDefault(),
+  UniformRandomVariableProto.getDefault(),
+  NormalRandomVariableProto.getDefault(),
+  ConstantRandomVariableProto.getDefault(),
   RoomProto.getDefault(),
   SpriteDisplayProto.getDefault(),
   AnimatedSpriteDisplayProto.getDefault(),

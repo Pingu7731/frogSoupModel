@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package frogsoup.game;
+
+message UniformRandomVariableProto {
+  double min = 1;
+  double max = 2;
+}
+
+message NormalRandomVariableProto {
+  double mean = 1;
+  double stdDev = 2;
+}
+
+message ConstantRandomVariableProto {
+  double value = 1;
+}
